@@ -3,7 +3,7 @@ import { IoPaw } from "react-icons/io5";
 
 const NavBar = () => {
   return (
-    <div className="w-full h-[100px] p-5 flex items-center justify-between bg-azul-50">
+    <div className="fixed z-10 w-full h-[100px] p-5 flex items-center justify-between bg-azul-50">
       <div className=" text-azul-900 flex items-center justify-center gap-2">
         <h1 className="font-poetsenOne text-[45px]">Amigo de pata</h1>
         <IoPaw className="text-[45px]" />
@@ -19,19 +19,19 @@ const NavBar = () => {
           className="text-lg text-azul-900 font-roboto font-medium hover:text-laranja-600 transition-all"
           href=""
         >
-          Home
+          Nossos Pets
         </Link>
         <Link
           className="text-lg text-azul-900 font-roboto font-medium hover:text-laranja-600 transition-all"
           href=""
         >
-          Home
+          Sobre nós
         </Link>
         <Link
           className="text-lg text-azul-900 font-roboto font-medium hover:text-laranja-600 transition-all"
           href=""
         >
-          Home
+          Cadastro
         </Link>
 
         <button

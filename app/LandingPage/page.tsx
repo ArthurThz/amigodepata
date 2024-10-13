@@ -1,7 +1,9 @@
+import HeroSection from "../Components/HeroSection";
+
 const LandingPage = () => {
   return (
-    <div className="">
-      <h1 className="">LandingPage</h1>
+    <div className="w-full h-auto">
+      <HeroSection />
     </div>
   );
 };

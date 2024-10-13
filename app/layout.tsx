@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "./Components/NavBar";
@@ -21,6 +21,12 @@ const roboto = Roboto({
   variable: "--font-roboto",
   weight: ["100", "300", "400", "500", "700"],
 });
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  weight: ["100", "300", "400", "500", "700"],
+});
 
 export default function RootLayout({
   children,
@@ -29,7 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${poetsenOne.variable} ${roboto.variable}`}>
+      <body
+        className={` ${poetsenOne.variable} ${roboto.variable} ${poppins.variable}`}
+      >
         <NavBar />
         {children}
       </body>

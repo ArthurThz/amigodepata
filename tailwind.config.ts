@@ -40,7 +40,8 @@ const config: Config = {
       },
       fontFamily:{
         poetsenOne:"var(--font-PoetsenOne)",
-        roboto:"var(--font-roboto)"
+        roboto:"var(--font-roboto)",
+        poppins:"var(--font-poppins)"
       }
     },
   },
