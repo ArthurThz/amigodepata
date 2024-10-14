@@ -3,7 +3,7 @@ import ImageContainer from "./imageContainer";
 
 const HeroSection = () => {
   return (
-    <div className="w-full h-screen pt-[110px] px-[160px] flex items-center   bg-gradient-to-br from-azul-500 to-azul-950">
+    <div className="w-full h-screen  flex flex-col items-center justify-center bg-gradient-to-br from-azul-500 to-azul-950 lg:flex-row lg:pt-[110px] lg:px-[160px]">
       <Copy />
       <ImageContainer />
     </div>

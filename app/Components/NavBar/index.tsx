@@ -3,12 +3,14 @@ import { IoPaw } from "react-icons/io5";
 
 const NavBar = () => {
   return (
-    <div className="fixed z-10 w-full h-[100px] p-5 flex items-center justify-between bg-azul-50">
+    <div className="fixed z-10 w-full h-[70px] lg:h-[100px] p-5 flex items-center justify-between bg-azul-50">
       <div className=" text-azul-900 flex items-center justify-center gap-2">
-        <h1 className="font-poetsenOne text-[45px]">Amigo de pata</h1>
-        <IoPaw className="text-[45px]" />
+        <h1 className="font-poetsenOne text-xl lg:text-[45px]">
+          Amigo de pata
+        </h1>
+        <IoPaw className="text-xl lg:text-[45px]" />
       </div>
-      <div className="flex items-center justify-around gap-5">
+      <div className="hidden lg:flex items-center justify-around gap-5">
         <Link
           className="text-lg text-azul-900 font-roboto font-medium hover:text-laranja-600 transition-all"
           href=""
