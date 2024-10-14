@@ -3,7 +3,7 @@ import OurSercives from "../Components/ourServices";
 
 const LandingPage = () => {
   return (
-    <div className="w-full flex flex-col gap-[50px] h-auto">
+    <div className="w-full flex flex-col gap-[50px] lg:gap-[90px] h-auto">
       <HeroSection />
       <OurSercives />
     </div>
