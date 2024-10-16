@@ -3,7 +3,7 @@ import OurServicesCard from "./ourServicesCard";
 import Equoterapia from "../../public/ourservices-equoterapia.jpg";
 import AnimaisSuporte from "../../public/ourservices-animais-suporte.jpeg";
 
-const OurSercives = () => {
+const OurServices = () => {
   return (
     <div className="w-full h-full min-h-screen py-10 px-7 flex flex-col gap-7 items-center bg-azul-50 lg:items-center lg:justify-center lg:gap-10">
       <h1 className="text-3xl font-poetsenOne text-azul-900 lg:text-5xl">
@@ -28,4 +28,4 @@ const OurSercives = () => {
   );
 };
 
-export default OurSercives;
+export default OurServices;
