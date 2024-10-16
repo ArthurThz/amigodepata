@@ -1,3 +1,4 @@
+import OurTeam from "../Components/AboutUs/ourTeam";
 import HeroSection from "../Components/HeroSection";
 import Horses from "../Components/MeetOutPets/Horses";
 import Pets from "../Components/MeetOutPets/Pets";
@@ -10,6 +11,7 @@ const LandingPage = () => {
       <OurSercives />
       <Horses />
       <Pets />
+      <OurTeam />
     </div>
   );
 };
