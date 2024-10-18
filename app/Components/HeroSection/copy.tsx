@@ -1,11 +1,11 @@
 const Copy = () => {
   return (
-    <div className="w-full h-auto px-4 flex -mt-14 items-center flex-col gap-6 lg:max-w-[50%] lg:h-full lg:w-auto lg:px-0 lg:py-24 lg:gap-16 lg:mt-0">
-      <h1 className="font-poetsenOne px-4 text-5xl text-white leading-tight lg:px-0 lg:text-6xl">
-        <span className="text-laranja-200">Transforme sua vida</span>com o apoio
-        de um <span className="text-laranja-200">companheiro!</span>
+    <div className="w-full h-auto px-4 flex items-center flex-col gap-6 lg:max-w-[50%] lg:h-full lg:w-auto lg:px-0 lg:py-24 lg:gap-16 lg:mt-0">
+      <h1 className="font-poetsenOne px-1 text-4xl sm:text-4xl text-white leading-tight lg:px-0 lg:text-6xl">
+        <span className="text-laranja-200">Transforme sua vida </span>com o
+        apoio de um <span className="text-laranja-200">companheiro!</span>
       </h1>
-      <p className="font-poppins italic text-2xl lg:text-4xl text-white leading-normal lg:leading-relaxed">
+      <p className="font-poppins italic text-xl lg:text-4xl text-white leading-normal lg:leading-relaxed">
         Conecte-se com{" "}
         <span className="underline">especialistas em terapia assistida</span>{" "}
         por animais perto de você!
