@@ -34,7 +34,7 @@ const OurTeam = () => {
         />
         <ProfilePicture
           image={GuilhermeProfilePicutre}
-          nome="Guilherme Gomes"
+          nome="Danielle Márcia"
         />
       </div>
     </div>
