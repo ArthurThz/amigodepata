@@ -4,6 +4,7 @@ import FinoProfilePicture from "../../public/fino-profile-picture.jpeg";
 import LuigiProfilePicutre from "../../public/luigi-profile-picture.jpeg";
 import GuilhermeProfilePicutre from "../../public/guilherme-profile-picture.jpeg";
 import RafaProfilePicutre from "../../public/rafa-profile-picture.jpg";
+import DanielleProfilePic from "../../public/danielle-profile-pic.jpg";
 import ProfilePicture from "./profilePicture";
 
 const OurTeam = () => {
@@ -32,10 +33,7 @@ const OurTeam = () => {
           image={GuilhermeProfilePicutre}
           nome="Guilherme Gomes"
         />
-        <ProfilePicture
-          image={GuilhermeProfilePicutre}
-          nome="Danielle Márcia"
-        />
+        <ProfilePicture image={DanielleProfilePic} nome="Danielle Márcia" />
       </div>
     </div>
   );
