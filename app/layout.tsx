@@ -3,6 +3,7 @@ import { Roboto, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
 
 export const metadata: Metadata = {
   title: "Amigo de pata",
@@ -40,6 +41,7 @@ export default function RootLayout({
       >
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
