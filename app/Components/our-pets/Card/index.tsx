@@ -12,7 +12,7 @@ const AnimalCard = ({
   return (
     <div
       className={twMerge(
-        "w-[75%] min-h-[300px] bg-marrom-500 px-5 py-4 border-2 rounded-md border-white flex flex-col items-start justify-center gap-2 shadow-lg shadow-laranja-400 text-white lg:w-[350px] hover:cursor-pointer hover:shadow-2xl hover:shadow-laranja-400 transition-all ease",
+        "w-[75%] min-h-[300px] bg-marrom-500 px-5 py-4 border-2 rounded-md border-marrom-500 flex flex-col items-start justify-center gap-2 shadow-lg shadow-white text-white lg:w-[350px] hover:cursor-pointer hover:shadow-2xl hover:border-white hover:shadow-laranja-400 transition-all ease",
         cardCustomClass
       )}
     >
