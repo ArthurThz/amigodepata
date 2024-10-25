@@ -1,10 +1,3 @@
-import ArthurProfilePicutre from "../../public/arthur-profile-picture.jpeg";
-import JujuProfilePicutre from "../../public/juju-profile-picture.jpeg";
-import FinoProfilePicture from "../../public/fino-profile-picture.jpeg";
-import LuigiProfilePicutre from "../../public/luigi-profile-picture.jpeg";
-import GuilhermeProfilePicutre from "../../public/guilherme-profile-picture.jpeg";
-import RafaProfilePicutre from "../../public/rafa-profile-picture.jpg";
-import DanielleProfilePic from "../../public/danielle-profile-pic.jpg";
 import ProfilePicture from "./profilePicture";
 
 const OurTeam = () => {
@@ -24,16 +17,31 @@ const OurTeam = () => {
         tentar proporcionar uma vida melhor para as duas partes.
       </h2>
       <div className="w-full lg:w-[50%] h-auto grid grid-rows-4 grid-cols-2 place-items-center  gap-12 lg:auto-rows-auto lg:grid-cols-3">
-        <ProfilePicture image={JujuProfilePicutre} nome="Julia Neves" />
-        <ProfilePicture image={ArthurProfilePicutre} nome="Arthur Theodoro" />
-        <ProfilePicture image={FinoProfilePicture} nome="Raphael Clivatti" />
-        <ProfilePicture image={RafaProfilePicutre} nome="Rafaella Seivane" />
-        <ProfilePicture image={LuigiProfilePicutre} nome="Luigi Boscariol" />
+        <ProfilePicture image="/juju-profile-picture.jpeg" nome="Julia Neves" />
         <ProfilePicture
-          image={GuilhermeProfilePicutre}
+          image="/arthur-profile-picture.jpeg"
+          nome="Arthur Theodoro"
+        />
+        <ProfilePicture
+          image="/fino-profile-picture.jpeg"
+          nome="Raphael Clivatti"
+        />
+        <ProfilePicture
+          image="/rafa-profile-picture.jpg"
+          nome="Rafaella Seivane"
+        />
+        <ProfilePicture
+          image="/luigi-profile-picture.jpeg"
+          nome="Luigi Boscariol"
+        />
+        <ProfilePicture
+          image="/guilherme-profile-picture.jpeg"
           nome="Guilherme Gomes"
         />
-        <ProfilePicture image={DanielleProfilePic} nome="Danielle Márcia" />
+        <ProfilePicture
+          image="/danielle-profile-pic.jpg"
+          nome="Danielle Márcia"
+        />
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ const Horses = () => {
       </div>
       <Image
         className="w-full h-[260px] lg:w-[60%] lg:h-full"
-        src={BannerCavalo}
+        src="/ourpets-equoterapia.jpg"
         width={1920}
         height={1080}
         alt="imagem cavalo e menina"

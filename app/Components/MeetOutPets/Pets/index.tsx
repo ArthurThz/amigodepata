@@ -1,6 +1,4 @@
 import Image from "next/image";
-import BannerPets from "../../../public/oupets-suporte-emocional.jpg";
-
 const Pets = () => {
   return (
     <div className="w-full h-auto flex flex-col items-center bg-azul-800 lg:flex-row-reverse lg:h-full">
@@ -19,7 +17,7 @@ const Pets = () => {
       </div>
       <Image
         className="w-full h-[260px] lg:w-[60%] lg:h-full"
-        src={BannerPets}
+        src="/ourpets-suporte-emocional.jpg"
         width={1920}
         height={1080}
         alt="imagem cavalo e menina"

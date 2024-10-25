@@ -12,14 +12,14 @@ const OurServices = () => {
       <div className="w-full h-auto flex flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-center lg:gap-14">
         <OurServicesCard
           title="Equoterapia"
-          image={Equoterapia}
+          image="/ourservices-equoterapia.jpg"
           description="A equoterapia é uma prática terapêutica que utiliza cavalos como parte do tratamento para promover melhorias na saúde física, emocional e cognitiva dos praticantes. 
         Essa abordagem é indicada para pessoas com diferentes tipos de necessidades especiais, como transtornos neurológicos, deficiências físicas, problemas emocionais e dificuldades de aprendizagem. 
 "
         />
         <OurServicesCard
           title="Animais para suporte emocional"
-          image={AnimaisSuporte}
+          image="/ourservices-animais-suporte.jpeg"
           description="Animais para suporte emocional são companheiros que proporcionam conforto, segurança e um senso de bem-estar para pessoas que enfrentam condições emocionais ou mentais, como ansiedade, depressão e transtorno de estresse pós-traumático (TEPT). A simples interação com esses animais pode ajudar a reduzir os níveis de estresse e a melhorar o humor, contribuindo para uma melhor qualidade de vida. 
     "
         />
