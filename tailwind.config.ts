@@ -35,6 +35,20 @@ const config: Config = {
         '900': '#7a230d',
         '950': '#460f02',
     },
+    'marrom': {
+        '50': '#faf7f0',
+        '100': '#f1e7d4',
+        '200': '#e3cda4',
+        '300': '#d4b075',
+        '400': '#ca9855',
+        '500': '#c3854c',
+        '600': '#a96336',
+        '700': '#8d4a30',
+        '800': '#743c2c',
+        '900': '#603327',
+        '950': '#361a12',
+    },
+    
     
     
       },
@@ -42,7 +56,11 @@ const config: Config = {
         poetsenOne:"var(--font-PoetsenOne)",
         roboto:"var(--font-roboto)",
         poppins:"var(--font-poppins)"
+      },
+      screens:{
+        'xxsm':'375px'
       }
+      
     },
   },
   plugins: [],

@@ -5,10 +5,16 @@ import "./globals.css";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import Container from "./Components/Container";
+import { IoPaw } from "react-icons/io5";
 
 export const metadata: Metadata = {
   title: "Amigo de pata",
   description: "Aqui você encontrará suporte com incriveis amigos de patas",
+  icons: [
+    {
+      url: "./paw-icon.svg",
+    },
+  ],
 };
 
 const poetsenOne = localFont({
