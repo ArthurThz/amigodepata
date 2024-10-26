@@ -4,10 +4,18 @@ import { twMerge } from "tailwind-merge";
 type AnimalCardProps = {
   cardCustomClass?: string;
   buttonCustomClass?: string;
+  nome: string;
+  idade: number;
+  raca: string;
+  imagem: string;
 };
 const AnimalCard = ({
   cardCustomClass,
   buttonCustomClass,
+  idade,
+  nome,
+  raca,
+  imagem,
 }: AnimalCardProps) => {
   return (
     <div
@@ -18,13 +26,13 @@ const AnimalCard = ({
     >
       <Image
         className="w-full h-[250px] rounded-xl"
-        src="https://cavalus.com.br/wp-content/uploads/2018/11/BH-Historoa-4.jpg"
+        src={imagem}
         width={1080}
         height={920}
         alt="imagem do animal"
       />
-      <h2 className="font-poetsenOne text-xl">Pé de pano</h2>
-      <p className="font-poetsenOne">Brasileiro de Hipismo • 5 anos</p>
+      <h2 className="font-poetsenOne text-xl">{nome}</h2>
+      <p className="font-poetsenOne">{`${raca} • ${idade} anos`}</p>
       <button
         className={twMerge(
           "px-4 py-1 bg-laranja-200 border-2 border-laranja-200 rounded-md text-azul-900 font-poetsenOne text-md hover:text-white hover:bg-transparent hover:border-white hover:border-2 transition-all ease",

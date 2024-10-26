@@ -3,7 +3,7 @@ import { IoPaw } from "react-icons/io5";
 
 const NavBar = () => {
   return (
-    <div className="z-20 w-full h-[70px] lg:h-[100px] p-5 flex items-center justify-between bg-azul-50 shadow-md shadow-azul-900">
+    <div className="z-20 w-full h-[70px] lg:h-[90px] p-5 flex items-center justify-between bg-azul-50 shadow-md shadow-azul-900">
       <div className=" text-azul-900 flex items-center justify-center gap-2">
         <h1 className="font-poetsenOne text-xl lg:text-[45px]">
           Amigo de pata

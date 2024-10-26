@@ -1,3 +1,5 @@
+"use client";
+
 import Horses from "../Components/our-pets/Horses";
 import SupportAnimals from "../Components/our-pets/SupportAnimals";
 
