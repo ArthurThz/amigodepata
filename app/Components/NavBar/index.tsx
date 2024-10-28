@@ -36,7 +36,7 @@ const NavBar = () => {
           Cadastro
         </Link>
 
-        <button className="py-1 px-6 rounded-lg bg-azul-50 border-2 border-azul-50 font-roboto text-lg font-medium text-azul-900 hover:bg-laranja-500/80 hover:border-azul-900 hover:border-2 hover:shadow-lg hover:shadow-azul-900 hover:text-azul-900 transition-all ease">
+        <button className="py-1 px-6 rounded-lg bg-azul-50 border-2 border-azul-900 shadow-md font-roboto text-lg font-medium text-azul-900 hover:bg-laranja-500/80 hover:border-azul-900 hover:border-2 hover:shadow-lg hover:shadow-azul-900 hover:text-azul-900 transition-all ease">
           Login
         </button>
       </div>
