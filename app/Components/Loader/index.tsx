@@ -11,7 +11,13 @@ const Loader = ({ image }: LoaderProps) => {
       {!image ? (
         <FaSpinner className="text-2xl text-azul-900 animate-spin" />
       ) : (
-        <Image src={image} width={300} height={300} alt="loader icon" />
+        <Image
+          unoptimized
+          src={image}
+          width={300}
+          height={300}
+          alt="loader icon"
+        />
       )}
     </div>
   );

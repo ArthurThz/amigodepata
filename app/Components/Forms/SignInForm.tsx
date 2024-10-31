@@ -1,9 +1,10 @@
 "use client";
 
-import { FaArrowRight, FaLock, FaUser } from "react-icons/fa";
+import { FaArrowRight, FaLock, FaLockOpen, FaUser } from "react-icons/fa";
 import TextInput from "../Input/text-input";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+import PasswordInput from "../Input/password-input";
 
 const SignInForm = () => {
   const {
@@ -27,12 +28,20 @@ const SignInForm = () => {
         icon={<FaUser />}
         control={control}
       />
-      <TextInput
+      {/* <TextInput
         name="password"
         placeholder="Senha"
         icon={<FaLock />}
+        type="password"
         // FaLockOpen
         control={control}
+      /> */}
+      <PasswordInput
+        control={control}
+        name="password"
+        hidePasswordIcon={<FaLock />}
+        showPasswordIcon={<FaLockOpen />}
+        placeholder="Senha"
       />
       <span className="font-roboto font-medium text-azul-900 group">
         Ainda não tem uma conta?{" "}
