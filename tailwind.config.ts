@@ -50,8 +50,16 @@ const config: Config = {
     },
     
     
-    
+      
       },
+      backgroundImage:{
+        "wave":"url(../public/wave-haikei.svg)",
+        "blob":"url(../public/blob-scene-haikei.svg)",
+        "blob-lg":"url(../public/blob-lg.svg)",
+        "bola":"url(../public/bola.svg)",
+      }
+      ,
+
       fontFamily:{
         poetsenOne:"var(--font-PoetsenOne)",
         roboto:"var(--font-roboto)",

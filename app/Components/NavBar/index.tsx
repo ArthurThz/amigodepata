@@ -25,7 +25,7 @@ const NavBar = () => {
         </Link>
         <Link
           className="text-lg text-azul-900 font-roboto font-medium hover:text-laranja-600 transition-all"
-          href="s"
+          href="/AboutUs"
         >
           Sobre nós
         </Link>
@@ -36,12 +36,12 @@ const NavBar = () => {
           Cadastro
         </Link>
 
-        <button
-          className="bg-laranja-300 px-12 py-2 rounded-md text-md font-roboto font-bold border border-laranja-300 text-azul-900 shadow-lg
-         hover:bg-laranja-100 transition-all ease-out delay-1 hover:shadow-md hover:shadow-laranja-400"
+        <Link
+          href="SignIn"
+          className="py-1 px-6 rounded-lg bg-azul-900 border-2 border-azul-900 shadow-md font-roboto text-lg font-medium text-white hover:bg-transparent hover:border-azul-900 hover:border-2 hover:shadow-lg hover:shadow-azul-900 hover:text-azul-900 transition-all ease"
         >
           Login
-        </button>
+        </Link>
       </div>
     </div>
   );
