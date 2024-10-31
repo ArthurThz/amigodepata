@@ -1,6 +1,13 @@
 export type AnimalProps = {
-    nome:string;
-    idade:number;
-    raca:string;
-    imagem:string;
+    codanimal:     string;
+    nome:          string;
+    tipoanimal:    string;
+    raca:          string;
+    especialidade: string;
+    idade:         number;
+    imagem:        string;
+}
+
+export type AnimalDataProps = {
+    content:AnimalProps[]
 }
