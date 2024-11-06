@@ -6,6 +6,7 @@ import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import Container from "./Components/Container";
 import { IoPaw } from "react-icons/io5";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Amigo de pata",
@@ -48,6 +49,7 @@ export default function RootLayout({
       >
         <NavBar />
         {children}
+        <Toaster richColors />
         <Footer />
       </body>
     </html>

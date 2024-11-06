@@ -1,7 +1,6 @@
 "use client";
 
 import { ComponentProps, ReactNode, useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Control, useController } from "react-hook-form";
 
 type PasswordInputProps = ComponentProps<"input"> & {
@@ -46,9 +45,7 @@ const PasswordInput = ({
           placeholder:font-normal  placeholder:text-azul-900
           focus-within:ring-2 focus-within:ring-azul-900"
         type={isPasswordVisible.type}
-        {...control.register(name, {
-          required: "Por favor, digite sua senha!",
-        })}
+        {...control.register(name)}
         {...inputProps}
         autoComplete="false"
       />

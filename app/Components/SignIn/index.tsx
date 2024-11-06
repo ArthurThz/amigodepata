@@ -3,8 +3,7 @@ import SignInForm from "../Forms/SignInForm";
 
 const LoginContainer = () => {
   return (
-    <div className="w-full h-screen px-4 flex flex-col items-center bg-blob lg:bg-blob-lg lg:bg-cover ">
-      {/* Header / Left side */}
+    <div className="w-full min-h-screen h-full px-4 flex flex-col items-center bg-blob lg:bg-blob-lg lg:bg-cover ">
       <h2 className="font-poetsenOne text-center text-azul-800 text-5xl mt-20 mb-14">
         Seja bem vindo de volta!
       </h2>

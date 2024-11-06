@@ -23,9 +23,7 @@ const TextInput = ({ control, name, icon, ...inputProps }: TextInputProps) => {
           placeholder:font-normal  placeholder:text-azul-900
           focus-within:ring-2 focus-within:ring-azul-900"
           placeholder={name}
-          {...control.register(name, {
-            required: "Por favor preencha o campo de usuário!",
-          })}
+          {...control.register(name)}
           {...inputProps}
         />
         <div className="w-auto h-auto flex items-center justify-center absolute right-5 text-azul-900">
