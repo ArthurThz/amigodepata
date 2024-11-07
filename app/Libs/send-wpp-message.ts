@@ -24,7 +24,7 @@ export const sendWppMessage = async ({message, phoneNumber}: sendWppMessageProps
       "API GZAPPY"
       ,
     ];
-    const phones = ["5511954805269"];
+    const phones = [""];
     
 
     await gClient
