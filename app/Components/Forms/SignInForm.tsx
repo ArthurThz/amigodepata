@@ -34,6 +34,7 @@ const SignInForm = () => {
   });
 
   const router = useRouter();
+
   const onSubmit = async (userData: loginUserData) => {
     try {
       await API_ROUTE.post("/Login", userData);
@@ -41,7 +42,7 @@ const SignInForm = () => {
       toast.success("Seja bem vindo! 🖐");
       router.push("/");
     } catch (err: any) {
-      if (err.status !== 401) {
+      if (err.status !== 400) {
         console.log(err);
         toast.error("Algo deu errado, tente novamente!");
       }
@@ -77,7 +78,7 @@ const SignInForm = () => {
           Crie uma agora mesmo
         </Link>
       </span>
-      <button className="w-full flex items-center justify-center gap-5 text-lg py-3 bg-azul-900 rounded-lg text-white font-roboto font-bold group hover:shadow-lg hover:shadow-azul-500 transition-all ease">
+      <button className="w-full flex items-center justify-center gap-5 text-lg py-3 bg-azul-900 rounded-lg text-white font-roboto font-bold group hover:shadow-lg hover:shadow-azul-700 transition-all ease">
         Entrar
         <FaArrowRight className="group-hover:translate-x-2 transition-all ease" />
       </button>
