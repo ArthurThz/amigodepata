@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import TextInput from "../Input/text-input";
 import { AiOutlineIdcard } from "react-icons/ai";
 import {
+  FaArrowRight,
   FaLock,
   FaLockOpen,
   FaRegUser,
@@ -20,11 +21,37 @@ import Select from "../Select";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
+import { API_ROUTE } from "@/app/Services/api";
+import { toast } from "sonner";
 
-const optionsDeficiencia = ["Autismo", "Sindrome de down"];
+const MOCKED_OPTIONS_DEFICIENCIA = [
+  {
+    label: "CID-10 (Q90) - Sindrome de Down",
+    value: "autismo",
+  },
+  {
+    label: "CID-11 (6A02) - Transtorno do Espectro do Autismo (TEA)",
+    value: "sindrome_de_down",
+  },
+];
 
-const MOCKED_OPTIONS_NIVEL_SUPORTE = ["1", "2", "3"];
+const MOCKED_OPTIONS_NIVEL_SUPORTE = [
+  {
+    label: "1",
+    value: 1,
+  },
+  {
+    label: "2",
+    value: 2,
+  },
+  {
+    label: "3",
+    value: 3,
+  },
+];
 const SignUpForm = () => {
+  const router = useRouter();
+
   const SignUpSchema = z.object({
     cpf: z
       .string({
@@ -60,66 +87,93 @@ const SignUpForm = () => {
     resolver: zodResolver(SignUpSchema),
   });
 
-  const router = useRouter();
-
-  const onSubmit = (userData: signUpUserData) => {
+  const onSubmit = async (userData: signUpUserData) => {
     console.log("Enviou o form...");
     console.log(userData);
+
+    try {
+      const response = await API_ROUTE.post("/Register", userData);
+      console.log(response);
+
+      const { status, data } = response;
+
+      if (status !== 201) {
+        if (status === 200) {
+          return toast.warning(data);
+        }
+        return toast.error(data);
+      }
+
+      toast.success(data);
+      router.push("/");
+    } catch (err) {
+      console.error(err);
+      return toast.error("Houve um erro!");
+    }
   };
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-[85%] px-2 flex flex-col items-center gap-5"
+      className="w-full px-2 min-h-full flex flex-col lg:flex-row items-center lg:items-start gap-10"
     >
-      <TextInput
-        control={control}
-        icon={<AiOutlineIdcard />}
-        name="cpf"
-        placeholder="Digite o seu cpf..."
-      />
+      <div className="w-full lg:w-[50%] flex flex-col items-center gap-5">
+        <TextInput
+          control={control}
+          icon={<AiOutlineIdcard />}
+          name="cpf"
+          placeholder="Digite o seu cpf..."
+        />
 
-      <TextInput
-        control={control}
-        icon={<FaRegUser />}
-        name="nome"
-        placeholder="Digite o seu nome..."
-      />
-      <TextInput
-        control={control}
-        icon={<MdOutlineEmail />}
-        name="email"
-        placeholder="Digite o seu email..."
-      />
+        <TextInput
+          control={control}
+          icon={<FaRegUser />}
+          name="nome"
+          placeholder="Digite o seu nome..."
+        />
+        <TextInput
+          control={control}
+          icon={<MdOutlineEmail />}
+          name="email"
+          placeholder="Digite o seu email..."
+        />
 
-      <TextInput
-        control={control}
-        icon={<FaWhatsapp />}
-        name="telefone"
-        placeholder="Digite o seu telefone..."
-      />
+        <TextInput
+          control={control}
+          icon={<FaWhatsapp />}
+          name="telefone"
+          placeholder="Digite o seu telefone..."
+        />
+        <PasswordInput
+          control={control}
+          placeholder="Digite uma senha..."
+          name="senha"
+          hidePasswordIcon={<MdOutlineLock />}
+          showPasswordIcon={<MdOutlineLockOpen />}
+        />
+      </div>
+      <div className="w-full lg:w-[50%] flex flex-col items-center gap-5">
+        <Select
+          label="Classificação internacional de doenças"
+          defaultValue="CID"
+          control={control}
+          name="deficiencia"
+          options={MOCKED_OPTIONS_DEFICIENCIA}
+        />
 
-      <Select
-        control={control}
-        name="deficiencia"
-        options={optionsDeficiencia}
-      />
+        <Select
+          label="Nivel de suporte"
+          control={control}
+          defaultValue="Escolha seu nivel de suporte"
+          name="nivel_suporte"
+          options={MOCKED_OPTIONS_NIVEL_SUPORTE}
+        />
 
-      <Select
-        control={control}
-        defaultValue="Escolha seu nivel de suporte"
-        name="nivel_suporte"
-        options={MOCKED_OPTIONS_NIVEL_SUPORTE}
-      />
-
-      <PasswordInput
-        control={control}
-        placeholder="Digite uma senha..."
-        name="senha"
-        hidePasswordIcon={<MdOutlineLock />}
-        showPasswordIcon={<MdOutlineLockOpen />}
-      />
-      <button>Enviar</button>
+        <button className="w-full mt-2 lg:mt-0 flex items-center justify-center gap-5 text-lg py-3 bg-azul-900 rounded-lg text-white font-roboto font-bold group hover:shadow-lg hover:shadow-azul-700 transition-all ease">
+          Confirmar
+          <FaArrowRight className="group-hover:translate-x-2 transition-all ease" />
+        </button>
+      </div>
     </form>
   );
 };

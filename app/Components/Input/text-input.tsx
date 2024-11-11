@@ -17,10 +17,10 @@ const TextInput = ({ control, name, icon, ...inputProps }: TextInputProps) => {
       <div className="w-full flex  items-center h-auto relative">
         <input
           className="w-full py-3 px-4 
-          font-roboto font-bold text-lg text-azul-900
+          font-roboto font-medium text-lg text-azul-900
           shadow-md shadow-azul-900/50 bg-azul-50 
           rounded-lg outline-none
-          placeholder:font-normal  placeholder:text-azul-900
+          placeholder:font-normal placeholder:text-sm  placeholder:text-azul-900
           focus-within:ring-2 focus-within:ring-azul-900"
           placeholder={name}
           {...control.register(name)}
