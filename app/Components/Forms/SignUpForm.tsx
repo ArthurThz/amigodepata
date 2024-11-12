@@ -83,17 +83,13 @@ const SignUpForm = () => {
 
   type signUpUserData = z.infer<typeof SignUpSchema>;
 
-  const { control, handleSubmit, register } = useForm<signUpUserData>({
+  const { control, handleSubmit } = useForm<signUpUserData>({
     resolver: zodResolver(SignUpSchema),
   });
 
   const onSubmit = async (userData: signUpUserData) => {
-    console.log("Enviou o form...");
-    console.log(userData);
-
     try {
       const response = await API_ROUTE.post("/Register", userData);
-      console.log(response);
 
       const { status, data } = response;
 
