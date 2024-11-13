@@ -12,7 +12,7 @@ const SideMenu = () => {
     setIsMenuOpen(isMenuOpen ? false : true);
   };
   return (
-    <div className="w-[40px] py-2 block-scrolling ">
+    <div className="w-[40px] flex items-center py-2 block-scrolling">
       <button onClick={toggleMenu}>
         <MdOutlineMenu className="text-3xl hover:cursor-pointer" />
       </button>

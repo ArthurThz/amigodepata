@@ -1,27 +1,19 @@
 import Link from "next/link";
-import { IoPaw } from "react-icons/io5";
 import SideMenu from "../SideMenu";
-import DesktopView from "./desktop-view";
-import MobileView from "./mobile-view";
+import { IoPaw } from "react-icons/io5";
 
-const NavBar = () => {
-  const IS_AUTH = false;
+const DesktopView = () => {
+  const IS_AUTH = true;
   return (
-    <div className="z-20 w-full h-[70px] lg:h-[90px] p-5  bg-azul-50 shadow-md shadow-azul-900">
-      <div className="w-full hidden lg:flex">
-        <DesktopView />
-      </div>
-      <div className="w-full flex items-center h-full justify-center lg:hidden">
-        <MobileView />
-      </div>
-      {/* <div className=" text-azul-900 flex items-center justify-center gap-2">
+    <div className="w-full flex items-center justify-between">
+      <div className=" text-azul-900 flex items-center justify-center gap-2">
         {IS_AUTH && <SideMenu />}
         <h1 className="font-poetsenOne text-xl lg:text-[45px]">
           Amigo de pata
         </h1>
-        <IoPaw className="text-xl lg:text-[45px]" />
+        <IoPaw className="text-[45px]" />
       </div>
-      <div className="hidden lg:flex items-center justify-around gap-5">
+      <div className="flex items-center justify-around gap-5">
         <Link
           className="text-lg text-azul-900 font-roboto font-medium hover:text-laranja-600 transition-all"
           href="/"
@@ -42,7 +34,7 @@ const NavBar = () => {
         </Link>
 
         {!IS_AUTH && (
-          <div className="flex items-center   gap-5">
+          <div className="flex items-center gap-5">
             <Link
               className="text-lg text-azul-900 font-roboto font-medium hover:text-laranja-600 transition-all "
               href=""
@@ -57,9 +49,9 @@ const NavBar = () => {
             </Link>
           </div>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };
 
-export default NavBar;
+export default DesktopView;
