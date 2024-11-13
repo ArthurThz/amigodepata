@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
 import { MdLogout, MdOutlineClose } from "react-icons/md";
 
+import { motion } from "motion/react";
+
 type MenuProps = {
   closeMenu: () => void;
   children: ReactNode;
@@ -9,7 +11,13 @@ type MenuProps = {
 const Menu = ({ closeMenu, children }: MenuProps) => {
   const IS_AUTH = false;
   return (
-    <div className="w-full lg:w-[320px] h-screen flex flex-col items-center justify-between px-8 py-4 bg-azul-50 ">
+    <motion.div
+      className="w-full lg:w-[320px] h-screen flex flex-col items-center justify-between px-8 py-4 bg-azul-50 "
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.4 }}
+    >
       <div className="w-full flex justify-end">
         <button type="button" className="bg-transparent" onClick={closeMenu}>
           <MdOutlineClose className="text-3xl hover:cursor-pointer hover:text-red-500 transition-all ease" />
@@ -29,7 +37,7 @@ const Menu = ({ closeMenu, children }: MenuProps) => {
           </button>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
