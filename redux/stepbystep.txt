@@ -1,0 +1,6 @@
+CRIANDO ARQUIVOS DO REDUX COM A VERSÃO LEGADO
+
+1 -> criar o store.ts 
+2 -> root reducer
+3 -> Criar provider no app.tsx
+4 -> criar os reducers (usuario)

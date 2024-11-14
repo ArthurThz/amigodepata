@@ -18,7 +18,7 @@ const SignInForm = () => {
       .email({ message: "Este email é inválido" }),
 
     senha: z.string({ required_error: "Por favor preencha a senha" }).min(5, {
-      message: "Por favor preencha sua senha!",
+      message: "Sua senha precisa ter ao menos 5 caracteres!",
     }),
   });
 
