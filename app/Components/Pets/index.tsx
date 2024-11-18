@@ -6,10 +6,14 @@ import ErrorMessage from "../Error";
 
 type AnimalInfoProps = {
   animalId: string;
+  especialidade: "equoterapia" | "suporte";
 };
 
-const Pets = ({ animalId }: AnimalInfoProps) => {
-  const { animal, isLoading, error } = useGetPetById({ id: animalId });
+const Pets = ({ animalId, especialidade }: AnimalInfoProps) => {
+  const { animal, isLoading, error } = useGetPetById({
+    id: animalId,
+    especialidade,
+  });
   if (isLoading) return <Loader />;
   return (
     <div className="w-full flex lg:flex-col items-center h-screen">

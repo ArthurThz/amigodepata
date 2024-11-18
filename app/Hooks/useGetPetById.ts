@@ -2,17 +2,21 @@ import { useEffect, useState } from "react";
 import { API_ROUTE } from "../Services/api";
 import { AnimalProps } from "../Types/Animals";
 
+type UseGetPetsByIdProps = {
+    id:string;
+    especialidade: "equoterapia" | "suporte"
+}
 
-export const useGetPetById = ({id} : {id:string}) => {
+export const useGetPetById = ({id,especialidade} : UseGetPetsByIdProps) => {
     const [animal, setAnimal] = useState<AnimalProps | null >();
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState();
 
-
+    
     const getAnimal = async() =>{
 
         try {
-            const response = await API_ROUTE.get(`/Pets/${id}`) 
+            const response = await API_ROUTE.get(`/Pets/${especialidade}/${id}`) 
           
 
             if(response.status !== 200){
