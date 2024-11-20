@@ -1,7 +1,7 @@
 import SideMenu from "../SideMenu";
 import { IoPaw } from "react-icons/io5";
 
-const MobileView = () => {
+const MobileView = ({isAuth} : {isAuth:boolean}) => {
   return (
     <div className="w-full flex items-center ">
       <SideMenu />

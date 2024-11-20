@@ -1,18 +1,20 @@
+"use client"
 import Link from "next/link";
 import { IoPaw } from "react-icons/io5";
 import SideMenu from "../SideMenu";
 import DesktopView from "./desktop-view";
 import MobileView from "./mobile-view";
+import { useAppSelector } from "@/redux/store/store";
 
 const NavBar = () => {
-  const IS_AUTH = false;
+  const {isAuth} = useAppSelector((state) =>state.userAuth)
   return (
     <div className="z-20 w-full h-[70px] lg:h-[90px] p-5  bg-azul-50 shadow-md shadow-azul-900">
       <div className="w-full hidden lg:flex">
-        <DesktopView />
+        <DesktopView isAuth={isAuth} />
       </div>
       <div className="w-full flex items-center h-full justify-center lg:hidden">
-        <MobileView />
+        <MobileView isAuth={isAuth} />
       </div>
       {/* <div className=" text-azul-900 flex items-center justify-center gap-2">
         {IS_AUTH && <SideMenu />}

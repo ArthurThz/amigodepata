@@ -10,6 +10,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { API_ROUTE } from "@/app/Services/api";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { logIn, UserAuthSlice } from "@/redux/store/features/authSlice";
 
 const SignInForm = () => {
   const loginFormSchema = z.object({
@@ -35,10 +37,17 @@ const SignInForm = () => {
 
   const router = useRouter();
 
+  const dispatch = useDispatch()
+
   const onSubmit = async (userData: loginUserData) => {
     try {
-      await API_ROUTE.post("/Login", userData);
+      const loginResponse = await API_ROUTE.post("/Login", userData);
 
+      if(!loginResponse.data){
+        return toast.error("Não foi possivel fazer o login")
+      }
+      const {data} = loginResponse
+      dispatch(logIn({uuid:data}))
       toast.success("Seja bem vindo! 🖐");
       router.push("/");
     } catch (err: any) {
