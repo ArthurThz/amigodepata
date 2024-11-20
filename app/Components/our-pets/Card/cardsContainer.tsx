@@ -35,6 +35,8 @@ const CardContainer = ({
               idade={idade}
               raca={raca}
               imagem={imagem}
+              id={codanimal}
+              especialidade={especialidade}
             />
           );
         })}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 
 type AnimalCardProps = {
@@ -8,6 +9,8 @@ type AnimalCardProps = {
   idade: number;
   raca: string;
   imagem: string;
+  id:string;
+  especialidade:"equoterapia" | "suporte" | string
 };
 const AnimalCard = ({
   cardCustomClass,
@@ -15,8 +18,11 @@ const AnimalCard = ({
   idade,
   nome,
   raca,
+  especialidade,
+  id,
   imagem,
 }: AnimalCardProps) => {
+  const redirectUrlPath = especialidade === "equoterapia" ? "Horses" : "SupportAnimals"
   return (
     <div
       className={twMerge(
@@ -33,14 +39,15 @@ const AnimalCard = ({
       />
       <h2 className="font-poetsenOne text-xl">{nome}</h2>
       <p className="font-poetsenOne">{`${raca} • ${idade} anos`}</p>
-      <button
+      <Link
+      href={`/Pets/${redirectUrlPath}/${id}`}
         className={twMerge(
           "px-4 py-1 bg-laranja-200 border-2 border-laranja-200 rounded-md text-azul-900 font-poetsenOne text-md hover:text-white hover:bg-transparent hover:border-white hover:border-2 transition-all ease",
           buttonCustomClass
         )}
       >
         Saber mais
-      </button>
+      </Link>
     </div>
   );
 };
