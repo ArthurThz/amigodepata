@@ -6,12 +6,15 @@ import PetCardInfo from "./card-info";
 import { FaHorseHead, FaWhatsapp } from "react-icons/fa";
 import { TbHeartPlus } from "react-icons/tb";
 import { GiHealing } from "react-icons/gi";
+import { ReactNode } from "react";
 
 type AnimalInfoProps = {
   animalData: AnimalProps;
+  pageTitle: string;
+  children: ReactNode;
 };
 
-const AnimalInfo = ({ animalData }: AnimalInfoProps) => {
+const AnimalInfo = ({ animalData, pageTitle, children }: AnimalInfoProps) => {
   const { imagem, nome, idade, raca } = animalData;
 
   return (
@@ -42,26 +45,10 @@ const AnimalInfo = ({ animalData }: AnimalInfoProps) => {
       </div>
       <div className="w-[60%] bg-azul-900 flex flex-col py-8">
         <h2 className="text-4xl font-roboto font-bold text-azul-100 text-center">
-          Tem interesse em agendar uma sessão de equoterapia?
+          {pageTitle}
         </h2>
         <div className="w-full flex items-center justify-center gap-4 py-8">
-          <PetCardInfo
-            icon={<FaHorseHead className="text-azul-800 text-2xl" />}
-            title="Qual o proposito da equoterapia?"
-            text="Equoterapia é um método terapêutico e educacional, que utiliza o cavalo
-dentro de uma abordagem multidisciplinar e interdisciplinar, nas áreas
-de saúde, educação e equitação, buscando o desenvolvimento
-biopsicossocial de pessoas com deficiências e/ou necessidades especiais.
-Conceito da ANDE-BRASIL, 1999.
-"
-          />
-          <PetCardInfo
-            icon={<GiHealing className="text-azul-800 text-2xl" />}
-            title="Beneficios da equoterapia"
-            text="Desenvolver o controle postural do praticante pelo estímulo à via dos substratos do controle motor local.
-Desenvolver o equilíbrio do praticante pelo estímulo aos substratos de controle motor postural, reações de ajuste, de defesa e de endireitamento corporais.
-Aperfeiçoar o assento do praticante sobre o cavalo pelo estímulo do controle motor global. Nesta fase o praticante aperfeiçoa e aplica feedback/feedforward adquiridos, que o permitem manter-se equilibrado sobre à sela e unir-se coordenada e harmoniosamente aos movimentos do cavalo, desenvolvendo com o animal um conjunto biomecânico melodioso."
-          />
+          {children}
         </div>
         <div className="w-full flex flex-col items-center py-8 gap-5">
           <p className="w-[50%] text-center text-lg font-roboto text-azul-50 font-bold">
@@ -69,7 +56,7 @@ Aperfeiçoar o assento do praticante sobre o cavalo pelo estímulo do controle m
             pelo(a) {nome} e faça já o seu agendamento!
           </p>
 
-          <button className="flex items-center gap-4 bg-azul-200 px-6 py-4 rounded-md ring-2 ring-azul-200 hover:bg-azul-50 text-lg font-medium text-azul-950 font-roboto hover:shadow-lg hover:shadow-azul-400 group transition-all ease">
+          <button className="flex items-center gap-4 bg-laranja-200 px-6 py-4 rounded-md  hover:bg-azul-50 text-lg font-medium text-azul-950 font-roboto hover:shadow-xl hover:shadow-azul-400 group transition-all ease delay-75">
             Solicitar Agendamento{" "}
             <FaWhatsapp className="group-hover:text-green-800 text-2xl" />
           </button>
