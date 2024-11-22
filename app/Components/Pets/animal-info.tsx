@@ -3,7 +3,9 @@ import { AxiosError } from "axios";
 import Image from "next/image";
 import ErrorMessage from "../Error";
 import PetCardInfo from "./card-info";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaHorseHead, FaWhatsapp } from "react-icons/fa";
+import { TbHeartPlus } from "react-icons/tb";
+import { GiHealing } from "react-icons/gi";
 
 type AnimalInfoProps = {
   animalData: AnimalProps;
@@ -34,16 +36,7 @@ const AnimalInfo = ({ animalData }: AnimalInfoProps) => {
             possimus exercitationem doloribus, reiciendis adipisci illum magni
             asperiores itaque odio temporibus obcaecati dolores? Quod, aut
             perferendis? Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Iure harum necessitatibus accusamus esse omnis quod nostrum
-            aspernatur optio ab, consequatur id quasi officiis voluptas ducimus
-            est blanditiis ea? Aut, repudiandae? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Expedita officia quidem quibusdam
-            tenetur voluptates delectus inventore fugit totam amet reiciendis
-            hic accusamus, aspernatur laboriosam adipisci eligendi id velit
-            incidunt modi! Lorem ipsum dolor, sit amet consectetur adipisicing
-            elit. Amet minima laborum ipsa. Omnis assumenda excepturi
-            dignissimos aliquam eius, nam maxime, repudiandae velit doloremque
-            officia cumque tempora obcaecati dolorum explicabo debitis.
+            elit.
           </p>
         </div>
       </div>
@@ -53,6 +46,7 @@ const AnimalInfo = ({ animalData }: AnimalInfoProps) => {
         </h2>
         <div className="w-full flex items-center justify-center gap-4 py-8">
           <PetCardInfo
+            icon={<FaHorseHead className="text-azul-800 text-2xl" />}
             title="Qual o proposito da equoterapia?"
             text="Equoterapia é um método terapêutico e educacional, que utiliza o cavalo
 dentro de uma abordagem multidisciplinar e interdisciplinar, nas áreas
@@ -62,20 +56,17 @@ Conceito da ANDE-BRASIL, 1999.
 "
           />
           <PetCardInfo
+            icon={<GiHealing className="text-azul-800 text-2xl" />}
             title="Beneficios da equoterapia"
             text="Desenvolver o controle postural do praticante pelo estímulo à via dos substratos do controle motor local.
 Desenvolver o equilíbrio do praticante pelo estímulo aos substratos de controle motor postural, reações de ajuste, de defesa e de endireitamento corporais.
 Aperfeiçoar o assento do praticante sobre o cavalo pelo estímulo do controle motor global. Nesta fase o praticante aperfeiçoa e aplica feedback/feedforward adquiridos, que o permitem manter-se equilibrado sobre à sela e unir-se coordenada e harmoniosamente aos movimentos do cavalo, desenvolvendo com o animal um conjunto biomecânico melodioso."
           />
-          {/* <PetCardInfo
-            title="Nossos Cavalos"
-            text="Nossos cavalos são mantidos pela ong POCOTÓ, todos são devidamente treinados para o manejo com pessoas. Portanto nosso cavalos estão extremamente familiariazados com o contato humano, trazendo assim uma maior segurança para nós e para ele."
-          /> */}
         </div>
         <div className="w-full flex flex-col items-center py-8 gap-5">
           <p className="w-[50%] text-center text-lg font-roboto text-azul-50 font-bold">
-            Clique no botão para enviar uma mensagem para a ong responsável pelo{" "}
-            {nome} e faça já o seu agendamento!
+            Clique no botão para enviar uma mensagem para a ong responsável
+            pelo(a) {nome} e faça já o seu agendamento!
           </p>
 
           <button className="flex items-center gap-4 bg-azul-200 px-6 py-4 rounded-md ring-2 ring-azul-200 hover:bg-azul-50 text-lg font-medium text-azul-950 font-roboto hover:shadow-lg hover:shadow-azul-400 group transition-all ease">
