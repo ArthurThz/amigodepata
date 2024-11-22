@@ -16,7 +16,7 @@ const SupportAnimals = () => {
       ) : (
         <CardContainer
           data={Animals}
-          CardButtonClass="bg-azul-900 text-white border-azul-900 hover:text-azul-900 hover:border-azul-900"
+          CardButtonClass="bg-azul-900 text-white  hover:text-azul-900 hover:border-azul-900  hover:bg-azul-300"
           CardClass="bg-white border-white text-azul-900 shadow-azul-900 hover:border-azul-900 hover:shadow-azul-900"
         />
       )}
