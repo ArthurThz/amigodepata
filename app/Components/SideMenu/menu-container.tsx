@@ -61,7 +61,7 @@ const MenuContainer = ({ closeMenu }: MenuContainerProps) => {
               <Item
                 icon={<MdCalendarToday className="text-2xl" />}
                 label="Meus Agendamentos"
-                href="/SignUp"
+                href={`/MyAppointments`}
                 closeMenu={closeMenu}
               />
               <Item
