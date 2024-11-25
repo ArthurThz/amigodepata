@@ -5,40 +5,75 @@ import TextInput from "../Input/text-input";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import PasswordInput from "../Input/password-input";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { API_ROUTE } from "@/app/Services/api";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { logIn, UserAuthSlice } from "@/redux/store/features/authSlice";
 
 const SignInForm = () => {
+  const loginFormSchema = z.object({
+    email: z
+      .string({ required_error: "Por favor preencha o email!" })
+      .email({ message: "Este email é inválido" }),
+
+    senha: z.string({ required_error: "Por favor preencha a senha" }).min(5, {
+      message: "Sua senha precisa ter ao menos 5 caracteres!",
+    }),
+  });
+
+  type loginUserData = z.infer<typeof loginFormSchema>;
+
   const {
     control,
     handleSubmit,
     formState: { isSubmitting },
     reset,
-  } = useForm();
+  } = useForm<loginUserData>({
+    resolver: zodResolver(loginFormSchema),
+  });
 
-  const onSubmit = async () => {
-    console.log("teste");
+  const router = useRouter();
+
+  const dispatch = useDispatch()
+
+  const onSubmit = async (userData: loginUserData) => {
+    try {
+      const loginResponse = await API_ROUTE.post("/Login", userData);
+
+      if(!loginResponse.data){
+        return toast.error("Não foi possivel fazer o login")
+      }
+      const {data} = loginResponse
+      dispatch(logIn({uuid:data}))
+      toast.success("Seja bem vindo! 🖐");
+      router.push("/");
+    } catch (err: any) {
+      if (err.status !== 400) {
+        console.log(err);
+        toast.error("Algo deu errado, tente novamente!");
+      }
+      toast.error(err.response.data);
+    }
   };
+
   return (
     <form
       className="w-[85%] px-2 flex flex-col items-center gap-5"
       onSubmit={handleSubmit(onSubmit)}
     >
       <TextInput
-        name="user"
+        name="email"
         placeholder="Usuário"
         icon={<FaUser />}
         control={control}
       />
-      {/* <TextInput
-        name="password"
-        placeholder="Senha"
-        icon={<FaLock />}
-        type="password"
-        // FaLockOpen
-        control={control}
-      /> */}
+
       <PasswordInput
         control={control}
-        name="password"
+        name="senha"
         hidePasswordIcon={<FaLock />}
         showPasswordIcon={<FaLockOpen />}
         placeholder="Senha"
@@ -52,7 +87,7 @@ const SignInForm = () => {
           Crie uma agora mesmo
         </Link>
       </span>
-      <button className="w-full flex items-center justify-center gap-5 text-lg py-3 bg-azul-900 rounded-lg text-white font-roboto font-bold group hover:shadow-lg hover:shadow-azul-500 transition-all ease">
+      <button className="w-full flex items-center justify-center gap-5 text-lg py-3 bg-azul-900 rounded-lg text-white font-roboto font-bold group hover:shadow-lg hover:shadow-azul-700 transition-all ease">
         Entrar
         <FaArrowRight className="group-hover:translate-x-2 transition-all ease" />
       </button>

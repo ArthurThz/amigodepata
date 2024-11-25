@@ -5,8 +5,8 @@ import SupportAnimals from "../Components/our-pets/SupportAnimals";
 
 const OurPets = () => {
   return (
-    <div className="w-full min-h-screen h-full flex flex-col gap-4 items-center py-10">
-      <h1 className="font-poetsenOne text-3xl text-azul-800">Nossos Pets!</h1>
+    <div className="w-full min-h-screen h-full flex flex-col gap-[90px] items-center ">
+      {/* <h1 className="font-poetsenOne text-3xl text-azul-800">Nossos Pets!</h1> */}
       <Horses />
       <SupportAnimals />
     </div>

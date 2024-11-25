@@ -14,7 +14,7 @@ const CardContainer = ({
   CardClass,
 }: CardContainerProps) => {
   return (
-    <div className="w-full h-full flex flex-col items-center gap-10 lg:grid lg:grid-cols-4 lg:place-items-center lg:gap-10">
+    <div className="w-full h-full flex flex-col items-center  gap-10 lg:grid lg:grid-cols-3 lg:place-items-center lg:px-80 ">
       {data &&
         data.map((animal, index) => {
           const {
@@ -35,6 +35,8 @@ const CardContainer = ({
               idade={idade}
               raca={raca}
               imagem={imagem}
+              id={codanimal}
+              especialidade={especialidade}
             />
           );
         })}

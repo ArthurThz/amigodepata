@@ -4,8 +4,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
-import Container from "./Components/Container";
-import { IoPaw } from "react-icons/io5";
+import { Toaster } from "sonner";
+
+import { Provider } from "react-redux";
+import ReduxProvider from "@/redux/store/provider";
 
 export const metadata: Metadata = {
   title: "Amigo de pata",
@@ -46,9 +48,13 @@ export default function RootLayout({
       <body
         className={` ${poetsenOne.variable} ${roboto.variable} ${poppins.variable}`}
       >
+        <ReduxProvider>
+
         <NavBar />
         {children}
+        <Toaster richColors position="top-center" />
         <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

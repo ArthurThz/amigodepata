@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 
 type AnimalCardProps = {
@@ -8,6 +9,8 @@ type AnimalCardProps = {
   idade: number;
   raca: string;
   imagem: string;
+  id: string;
+  especialidade: "equoterapia" | "suporte" | string;
 };
 const AnimalCard = ({
   cardCustomClass,
@@ -15,32 +18,38 @@ const AnimalCard = ({
   idade,
   nome,
   raca,
+  especialidade,
+  id,
   imagem,
 }: AnimalCardProps) => {
+  const redirectUrlPath =
+    especialidade === "equoterapia" ? "Horses" : "SupportAnimals";
   return (
     <div
       className={twMerge(
-        "w-[75%] min-h-[300px] bg-laranja-900/70 px-5 py-4 border-2 rounded-md border-marrom-500 flex flex-col items-start justify-center gap-2 shadow-lg shadow-white text-white lg:w-[350px] hover:cursor-pointer hover:shadow-2xl hover:border-white hover:shadow-laranja-400 transition-all ease",
+        "w-[75%] min-h-[450px] bg-azul-100 px-6 py-5 border-2 rounded-md border-trasparent flex flex-1 flex-col items-start justify-center gap-2 shadow-md shadow-azul-900 text-azul-900 antialiased lg:w-[350px] hover:cursor-pointer hover:shadow-lg hover:border-azul-900 hover:shadow-azul-900 transition-all ease",
         cardCustomClass
       )}
     >
+      <h2 className="font-poetsenOne text-2xl">{nome}</h2>
       <Image
-        className="w-full h-[250px] rounded-xl"
+        className="w-full h-[250px] rounded-xl ring-2 ring-azul-900 shadow-md shadow-azul-900"
         src={imagem}
         width={1080}
         height={920}
         alt="imagem do animal"
       />
-      <h2 className="font-poetsenOne text-xl">{nome}</h2>
-      <p className="font-poetsenOne">{`${raca} • ${idade} anos`}</p>
-      <button
+
+      <p className="font-roboto font-bold mt-4">{`${raca} • ${idade} anos`}</p>
+      <Link
+        href={`/Pets/${redirectUrlPath}/${id}`}
         className={twMerge(
-          "px-4 py-1 bg-laranja-200 border-2 border-laranja-200 rounded-md text-azul-900 font-poetsenOne text-md hover:text-white hover:bg-transparent hover:border-white hover:border-2 transition-all ease",
+          "px-6 py-2 bg-azul-900 rounded-lg shadow-md shadow-azul-900 text-white font-roboto font-bold text-md  hover:bg-azul-600  hover:shadow-md hover:shadow-azul-900 transition-all ease",
           buttonCustomClass
         )}
       >
         Saber mais
-      </button>
+      </Link>
     </div>
   );
 };
