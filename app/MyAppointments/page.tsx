@@ -9,12 +9,13 @@ const MyAppointments = () => {
   const { uuid } = useAppSelector((state) => state.userAuth);
   const { Appointments, status, handleOnDeleteAppointment } = useGetAppointment(
     {
-      userId: "c6b0ee59-51a1-4008-8221-5a5a8b43f77b",
+      userId: uuid,
     }
   );
   if (status === "isLoading") return <Loader />;
+
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full min-h-screen">
       <AppoitmentsContainer
         appointments={Appointments}
         onDeleteAppointment={handleOnDeleteAppointment}

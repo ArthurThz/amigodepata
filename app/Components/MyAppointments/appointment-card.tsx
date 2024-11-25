@@ -1,6 +1,5 @@
 import { AppointmentProps } from "@/app/Types/Animals";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { CiCalendar, CiClock1 } from "react-icons/ci";
 import { LiaHorseSolid } from "react-icons/lia";
 import { MdCalendarToday } from "react-icons/md";
 
