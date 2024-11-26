@@ -9,7 +9,7 @@ const EmptyAppointments = () => {
       <span className="text-xl">
         <Link
           href="/OurPets"
-          className="underline-offset-2 text-azul-900 font-roboto font-bold"
+          className="underline text-azul-900 font-roboto font-bold"
         >
           Clique aqui
         </Link>{" "}

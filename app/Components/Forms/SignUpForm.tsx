@@ -101,7 +101,7 @@ const SignUpForm = () => {
       }
 
       toast.success(data);
-      router.push("/");
+      router.push("/SignIn");
     } catch (err) {
       console.error(err);
       return toast.error("Houve um erro!");

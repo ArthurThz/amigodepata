@@ -1,12 +1,14 @@
 import { AnimalProps } from "@/app/Types/Animals";
-import { AxiosError } from "axios";
+
 import Image from "next/image";
-import ErrorMessage from "../Error";
-import PetCardInfo from "./card-info";
-import { FaHorseHead, FaWhatsapp } from "react-icons/fa";
-import { TbHeartPlus } from "react-icons/tb";
-import { GiHealing } from "react-icons/gi";
+
+import { FaWhatsapp } from "react-icons/fa";
+
 import { ReactNode } from "react";
+
+import { sendWppMessage } from "@/app/utils/send-wpp-message";
+import { useSendMessage } from "@/app/Hooks/useSendMessage";
+import { useAppSelector } from "@/redux/store/store";
 
 type AnimalInfoProps = {
   animalData: AnimalProps;
@@ -15,8 +17,9 @@ type AnimalInfoProps = {
 };
 
 const AnimalInfo = ({ animalData, pageTitle, children }: AnimalInfoProps) => {
-  const { imagem, nome, idade, raca } = animalData;
-
+  const { imagem, nome, idade, raca, especialidade } = animalData;
+  const { uuid } = useAppSelector((state) => state.userAuth);
+  console.log(especialidade);
   return (
     <div className="w-full h-full flex  justify-between ">
       <div className="w-[40%] flex flex-col justify-start items-start">
@@ -56,7 +59,12 @@ const AnimalInfo = ({ animalData, pageTitle, children }: AnimalInfoProps) => {
             pelo(a) {nome} e faça já o seu agendamento!
           </p>
 
-          <button className="flex items-center gap-4 bg-laranja-200 px-6 py-4 rounded-md  hover:bg-azul-50 text-lg font-medium text-azul-950 font-roboto hover:shadow-xl hover:shadow-azul-400 group transition-all ease delay-75">
+          <button
+            onClick={() =>
+              useSendMessage({ type: especialidade, userId: uuid })
+            }
+            className="flex items-center gap-4 bg-laranja-200 px-6 py-4 rounded-md  hover:bg-azul-50 text-lg font-medium text-azul-950 font-roboto hover:shadow-xl hover:shadow-azul-400 group transition-all ease delay-75"
+          >
             Solicitar Agendamento{" "}
             <FaWhatsapp className="group-hover:text-green-800 text-2xl" />
           </button>
