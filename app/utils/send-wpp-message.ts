@@ -7,7 +7,7 @@ type sendWppMessageProps = {
 }
 
 export const sendWppMessage = async ({message, phoneNumber}: sendWppMessageProps) =>{
-    console.log(message)
+    
     // Definição das variáveis de ambiente
     const GZAPPY_API_TOKEN = process.env.NEXT_PUBLIC_GZAPPY_API_TOKEN;
     const GZAPPY_INSTANCE_ID = process.env.NEXT_PUBLIC_GZAPPY_INSTANCE_ID;

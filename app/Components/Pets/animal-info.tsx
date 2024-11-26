@@ -19,7 +19,7 @@ type AnimalInfoProps = {
 const AnimalInfo = ({ animalData, pageTitle, children }: AnimalInfoProps) => {
   const { imagem, nome, idade, raca, especialidade } = animalData;
   const { uuid } = useAppSelector((state) => state.userAuth);
-  console.log(especialidade);
+
   return (
     <div className="w-full h-full flex  justify-between ">
       <div className="w-[40%] flex flex-col justify-start items-start">
@@ -61,7 +61,11 @@ const AnimalInfo = ({ animalData, pageTitle, children }: AnimalInfoProps) => {
 
           <button
             onClick={() =>
-              useSendMessage({ type: especialidade, userId: uuid })
+              useSendMessage({
+                type: especialidade,
+                userId: uuid,
+                animal: nome,
+              })
             }
             className="flex items-center gap-4 bg-laranja-200 px-6 py-4 rounded-md  hover:bg-azul-50 text-lg font-medium text-azul-950 font-roboto hover:shadow-xl hover:shadow-azul-400 group transition-all ease delay-75"
           >
