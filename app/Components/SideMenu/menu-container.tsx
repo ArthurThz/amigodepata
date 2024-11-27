@@ -6,6 +6,7 @@ import { FaPeopleGroup } from "react-icons/fa6";
 import { useAppDispatch, useAppSelector } from "@/redux/store/store";
 import { IoLogOut } from "react-icons/io5";
 import { logOut } from "@/redux/store/features/authSlice";
+import { useRouter } from "next/navigation";
 
 type MenuContainerProps = {
   closeMenu: () => void;
@@ -13,10 +14,11 @@ type MenuContainerProps = {
 const MenuContainer = ({ closeMenu }: MenuContainerProps) => {
   const { isAuth } = useAppSelector((state) => state.userAuth);
   const dispatch = useAppDispatch();
-
+  const router = useRouter();
   const logOutUser = () => {
     dispatch(logOut());
     closeMenu();
+    router.push("/");
   };
   return (
     <div className="w-full h-screen fixed flex  justify-start bottom-0 z-20 bg-black/40  top-0  right-0 overflow-hidden">
@@ -62,12 +64,6 @@ const MenuContainer = ({ closeMenu }: MenuContainerProps) => {
                 icon={<MdCalendarToday className="text-2xl" />}
                 label="Meus Agendamentos"
                 href={`/MyAppointments`}
-                closeMenu={closeMenu}
-              />
-              <Item
-                icon={<FaDog className="text-2xl" />}
-                label="Acompanhar Adoção"
-                href="/"
                 closeMenu={closeMenu}
               />
             </div>

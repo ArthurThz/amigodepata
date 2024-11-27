@@ -44,6 +44,7 @@ export const useSendMessage = async ({type,animal,userId}: sendMessageProps) =>{
    
 
     sendWppMessage({message:mensagemFinal})
+    toast.success("Mensagem Enviada! Aguarde o contato da ong responsável")
 
     }catch(err:any) {
         console.error(err)

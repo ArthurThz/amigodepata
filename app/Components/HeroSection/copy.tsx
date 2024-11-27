@@ -1,4 +1,9 @@
+"use client";
+import { useAppSelector } from "@/redux/store/store";
+import Link from "next/link";
+
 const Copy = () => {
+  const { uuid } = useAppSelector((state) => state.userAuth);
   return (
     <div className="w-full h-auto px-4 flex items-center flex-col gap-6 lg:max-w-[50%] lg:h-full lg:w-auto lg:px-0 lg:py-24 lg:gap-10 lg:mt-0">
       <h1 className="font-poetsenOne  px-1 text-4xl sm:text-4xl text-white leading-tight lg:px-0 lg:text-6xl">
@@ -11,18 +16,20 @@ const Copy = () => {
         por animais perto de você!
       </p>
       <div className="w-full flex flex-col items-center justify-center gap-10 mt-10 lg:flex-row lg:gap-10">
-        <button
+        <Link
+          href="/AboutUs"
           className="w-[80%] py-2 z-10 lg:max-w-[350px] px-10  bg-laranja-200 text-azul-800 rounded-xl font-bold border-2 border-laranja-200 
         font-roboto text-lg shadow-xl shadow-azul-900 lg:w-auto  hover:bg-azul-800 hover:text-laranja-200 hover:shadow-lg  transition-all ease"
         >
           Conheça a nossa historia
-        </button>
-        <button
+        </Link>
+        <Link
+          href={uuid ? "/OurPets" : "/SignIn"}
           className="w-[80%] py-2 z-10 lg:max-w-[350px] px-10  bg-laranja-200 text-azul-800 rounded-xl font-bold border-2 border-laranja-200 
         font-roboto text-lg shadow-xl shadow-azul-900 lg:w-auto hover:bg-azul-800 hover:text-laranja-200 hover:shadow-lg  transition-all ease"
         >
           Acesse a plataforma
-        </button>
+        </Link>
       </div>
     </div>
   );

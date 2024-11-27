@@ -9,11 +9,28 @@ const AboutUs = () => {
           <h1 className="font-poetsenOne text-2xl text-white lg:text-5xl">
             Sobre Nós
           </h1>
-          <p className="font-poetsenOne text-white font-normal text-md  lg:text-2xl lg:px-20">
+          <p className="font-roboto  text-white font-medium text-md  lg:text-2xl lg:px-20">
             Nosso propósito é proporcionar um ganho motor, diciplinar, social,
             emocional e tudo que faz parte do mundo e necessidades PcD, com um
             impacto positivo na qualidade de vida das famílias atípicas
             brasileiras.
+          </p>
+          <p className="font-roboto  text-white font-medium text-md  lg:text-2xl lg:px-20">
+            Para isso decidimos nos tornar um intermediário entre as familias
+            atípicas e as ongs que fornecem serviços para estas familias, mais
+            especifiamente equoterapia e adoção de animais de suporte emocional.
+            Nós sabemos o quando pode ser desafiador trabalhar com pessoas do
+            espectro autista ou pessoas que tenham sindrome de down, mas é ai
+            que encontramos forças, o caminho pode ser um pouco conturbado no
+            inicio, mas sabemos que vale a pena o resultado final é sempre
+            gratificante.
+          </p>
+          <p className="font-roboto  text-white font-medium text-md  lg:text-2xl lg:px-20">
+            Nós sabemos o quando pode ser desafiador trabalhar com pessoas do
+            espectro autista ou pessoas que tenham sindrome de down, mas é ai
+            que encontramos forças, o caminho pode ser um pouco conturbado no
+            inicio, mas sabemos que vale a pena o resultado final é sempre
+            gratificante.
           </p>
         </div>
         <Image
